@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <nav class="col-md-2 sidebar">
+            <a href="Home/Index">Dashboard</a>
+            <a asp-controller="Product" asp-action="Index">Ürünler</a>
+            <a href="#">Siparişler</a>
+            <a asp-controller="Supplier" asp-action="Index">Müşteriler</a>
+            <a href="#">Görevler</a>
+            @*<a href="#">Raporlar</a>*@
+            <a href="#">Ayarlar</a>
+        </nav>
+        <main class="col-md-10 p-4">
+            <h2 class="mb-4">Dashboard</h2>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card text-center p-3">
+                        <h4>Toplam Müşteri</h4>
+                        <p class="display-6">@ViewBag.TotalSupp</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-3">
+                        <h4>Aktif Fırsatlar</h4>
+                        <p class="display-6">32</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-3">
+                        <h4>Tamamlanan Görevler</h4>
+                        <p class="display-6">58</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <h5 class="mb-3">Aylık Satış Performansı</h5>
+                        <canvas id="salesChart" class="chart-container"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <h5 class="mb-3">Müşteri Dağılımı</h5>
+                        <canvas id="customerChart" class="chart-container"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    new Chart(salesCtx, {
+        type: 'line',
+        data: {
+            labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran'],
+            datasets: [{
+                label: 'Satış',
+                data: [12000, 15000, 14000, 17000, 18000, 22000],
+                borderColor: '#3498db',
+                fill: false,
+                tension: 0.3
+            }]
+        }
+    });
+
+    const customerCtx = document.getElementById('customerChart').getContext('2d');
+    new Chart(customerCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Yeni Müşteriler', 'Mevcut Müşteriler', 'Potansiyel Müşteriler'],
+            datasets: [{
+                data: [40, 35, 25],
+                backgroundColor: ['#1abc9c', '#e74c3c', '#f1c40f']
+            }]
+        }
+    });
+</script>

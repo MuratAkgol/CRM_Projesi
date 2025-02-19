@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using EntityLayer
+@model List<Products>
+
+<div class="container mt-2">
+<h2>Ürün Listesi</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>İsim</th>
+            <th>Fiyat</th>
+            <th>Kod</th>
+            <th>Birim</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Aktif mi?</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.Name</td>
+            <td>@item.Price ₺</td>
+            <td>@item.Code</td>
+            <td>@item.Unit</td>
+            <td>@item.CreatedDate.ToShortDateString()</td>
+            <td>@(item.IsActive ? "Evet" : "Hayır")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+</div>
