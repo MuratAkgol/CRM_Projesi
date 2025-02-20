@@ -1,10 +1,12 @@
 ﻿using CRM.Models;
 using DataLayer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace CRM.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly Context _context;
@@ -19,6 +21,8 @@ namespace CRM.Controllers
         public IActionResult Index()
         {
             ViewBag.TotalSupp = _context.tbl_suppliers.Select(x=>x.SupplierId).Count();
+            var userName = User.Identity?.Name;
+            ViewBag.UserName = userName;
             return View();
         }
 

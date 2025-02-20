@@ -1,8 +1,10 @@
 ﻿using DataLayer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRM.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly Context _context;
@@ -14,7 +16,7 @@ namespace CRM.Controllers
 
         public IActionResult Index()
         {
-            var products = _context.tbl_products.ToList(); // DbSet ismine dikkat!
+            var products = _context.tbl_products.ToList(); 
             return View(products);
         }
     }

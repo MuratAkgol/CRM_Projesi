@@ -12,25 +12,39 @@
             <a href="#">Siparişler</a>
             <a asp-controller="Supplier" asp-action="Index">Müşteriler</a>
             <a href="#">Görevler</a>
-            @*<a href="#">Raporlar</a>*@
-            <a href="#">Ayarlar</a>
+
+            <a asp-controller="Settings" asp-action="Index">Ayarlar</a>
+
+            <form asp-action="Logout" asp-controller="Account" method="post" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-outline-danger">Çıkış Yap</button>
+            </form>
+
+            
+
         </nav>
         <main class="col-md-10 p-4">
-            <h2 class="mb-4">Dashboard</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="mb-4">Dashboard</h2>
+                </div><div class="col-md-4">
+                    <h2>Hoş Geldin @ViewBag.UserName</h2>
+                </div>
+            </div>
+
             <div class="row mb-4">
-                <div class="col-md-4">
+                <div class="col-md-4 mt-2">
                     <div class="card text-center p-3">
                         <h4>Toplam Müşteri</h4>
                         <p class="display-6">@ViewBag.TotalSupp</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-2">
                     <div class="card text-center p-3">
                         <h4>Aktif Fırsatlar</h4>
                         <p class="display-6">32</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-2">
                     <div class="card text-center p-3">
                         <h4>Tamamlanan Görevler</h4>
                         <p class="display-6">58</p>
@@ -39,13 +53,13 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mt-2">
                     <div class="card p-3">
                         <h5 class="mb-3">Aylık Satış Performansı</h5>
                         <canvas id="salesChart" class="chart-container"></canvas>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mt-2">
                     <div class="card p-3">
                         <h5 class="mb-3">Müşteri Dağılımı</h5>
                         <canvas id="customerChart" class="chart-container"></canvas>

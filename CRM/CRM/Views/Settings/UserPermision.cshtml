@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@using EntityLayer
+@model List<Users>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Kullanıcı adı</th>
+                        <th scope="col">E mail</th>
+                        <th scope="col">Admin Onayı</th>
+                        <th scope="col">Kullanımda</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.UserId</th>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>
+                            <td>
+                                @if (item.AdminApprove)
+                                {
+                                    <p>Evet</p>
+                                }
+                                else
+                                {
+                                    <div class="row">
+
+
+                                        <div class="col-md-2">
+
+                                            <p>Hayır</p>
+                                        </div>
+                                        <div class="col-md-8">
+
+                                            @* <form method="post" asp-action="UserPermision" asp-controller="Settings">
+                                    <button class="btn btn-sm btn-outline-info" type="submit">Onayla</button>*@
+                                            <form id="postForm-@item.UserId" method="post" action="@Url.Action("Approve", "Settings")" style="display:none;">
+                                                <input type="hidden" name="id" value="@item.UserId" />
+                                                @Html.AntiForgeryToken()
+                                            </form>
+
+                                            <a href="#" class="btn btn-sm btn-outline-info" onclick="document.getElementById('postForm-@item.UserId').submit(); return false;">Onayla</a>
+                                            @*</form>*@
+                                        </div>
+                                    </div>
+                                }
+
+                            </td>
+                            <td>
+                                @if (item.IsActive)
+                                {
+                                    <p>Evet</p>
+                                }
+                                else
+                                {
+                                    <p>Hayır</p>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
