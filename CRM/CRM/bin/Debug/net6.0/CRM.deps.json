@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "CRM/1.0.0": {
         "dependencies": {
+          "BusinessLayer": "1.0.0",
           "DataLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0"
         },
@@ -421,6 +422,15 @@
           }
         }
       },
+      "BusinessLayer/1.0.0": {
+        "dependencies": {
+          "DataLayer": "1.0.0",
+          "EntityLayer": "1.0.0"
+        },
+        "runtime": {
+          "BusinessLayer.dll": {}
+        }
+      },
       "DataLayer/1.0.0": {
         "dependencies": {
           "EntityLayer": "1.0.0",
@@ -737,6 +747,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DataLayer/1.0.0": {
       "type": "project",

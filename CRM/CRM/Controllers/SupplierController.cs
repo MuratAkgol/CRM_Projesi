@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using EntityLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,18 @@ namespace CRM.Controllers
         {
             var suppliers = _context.tbl_suppliers.ToList();
             return View(suppliers);
+        }
+        [HttpPost]
+        public IActionResult AddSupplier(Suppliers supplier)
+        {
+            supplier.LastOperation = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                _context.tbl_suppliers.Add(supplier);
+                _context.SaveChanges();
+                TempData["Success"] = "Tedarikçi başarıyla eklendi!";
+            }
+            return RedirectToAction("Index");
         }
     }
 }

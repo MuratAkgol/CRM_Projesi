@@ -1,0 +1,165 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var users = ViewBag.Users as Dictionary<int, string>;
+}
+@using EntityLayer
+@model List<Tasks>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2 mt-2">
+            <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#addExpenseModal">
+                Görev Ekle
+            </button>
+        </div>
+
+        <!--Modal başalngıç-->
+        <div class="modal fade" id="addExpenseModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Gider Ekle</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="taskForm" asp-controller="Task" asp-action="Index" method="post">
+                            <div class="mb-3">
+                                <label for="TaskTitle" class="form-label">Görev Başlığı</label>
+                                <input class="form-control" name="TaskTitle" type="text" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="TaskContent" class="form-label">Görev İçeriği</label>
+                                <textarea class="form-control" name="TaskContent" required></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                @if (ViewBag.Role == "Admin")
+                                {
+                                    <label for="TaskOwnerId" class="form-label">Görev Atanacak Kişi</label>
+                                    <select class="form-select" name="TaskOwnerId" required>
+                                        <option value="">Kişi Seçin</option>
+                                        @foreach (var user in (Dictionary<int, string>)ViewBag.Users)
+                                        {
+                                            <option value="@user.Key">@user.Value</option>
+                                        }
+                                    </select>
+                                }
+                                else
+                                {
+                                    <input type="hidden" name="TaskOwnerId" value="@ViewBag.UserId" />
+                                }
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Ekle</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal bitiş-->
+
+        @if (Model.Count > 0)
+        {
+            <div class="col-md-2 mt-2">
+                <h2 class="h2 text-center">Beklemede</h2>
+                @foreach (var item in Model)
+                {
+                    @if (item.TaskStatus == "Beklemede")
+                    {
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h3 class="card-title">@item.TaskTitle</h3>
+                                <h6 class="card-subtitle text-muted">Görev Sahibi: @(users.ContainsKey(item.TaskOwnerId) ? users[item.TaskOwnerId] : "Bilinmiyor")</h6>
+                                <p class="card-text mt-2" style="display:none" Id="task_@item.TaskId">@item.TaskContent</p>
+                                <div class="btn-group mt-3">
+                                    <form id="postForm-@item.TaskId" method="post" action="@Url.Action("UpdateStatus", "Task")" style="display:none;">
+                                        <input type="hidden" name="id" value="@item.TaskId" />
+                                        @Html.AntiForgeryToken()
+                                    </form>
+                                    <a href="#" class="btn btn-sm btn-outline-info" onclick="document.getElementById('postForm-@item.TaskId').submit(); return false;">Durumu Güncelle</a>
+                                    <button class="btn btn-outline-danger" onclick="göster(@item.TaskId)">Göster</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                }
+            </div>
+
+
+            <div class="col-md-3 mt-2">
+                <h2 class="h2 text-center">Yapılıyor</h2>
+                @foreach (var item in Model)
+                {
+                    @if (item.TaskStatus == "Devam Ediyor")
+                    {
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h3 class="card-title">@item.TaskTitle</h3>
+                                <h6 class="card-subtitle text-muted">Görev Sahibi: @(users.ContainsKey(item.TaskOwnerId) ? users[item.TaskOwnerId] : "Bilinmiyor")</h6>
+                                <p class="card-text mt-2" style="display:none" Id="task_@item.TaskId">@item.TaskContent</p>
+                                <div class="btn-group mt-2">
+                                    <form id="postForm-@item.TaskId" method="post" action="@Url.Action("UpdateStatus", "Task")" style="display:none;">
+                                        <input type="hidden" name="id" value="@item.TaskId" />
+                                        @Html.AntiForgeryToken()
+                                    </form>
+                                    <a href="#" class="btn btn-sm btn-outline-info" onclick="document.getElementById('postForm-@item.TaskId').submit(); return false;">Durumu Güncelle</a>
+                                    <button class="btn btn-outline-danger" onclick="göster(@item.TaskId)">Göster</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+
+
+            <div class="col-md-3 mt-2">
+                <h2 class="h2 text-cen">Tamamlandı</h2>
+                @foreach (var item in Model)
+                {
+                    @if (item.TaskStatus == "Tamamlandı")
+                    {
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h3 class="card-title">@item.TaskTitle</h3>
+                                <h6 class="card-subtitle text-muted">Görev Sahibi: @(users.ContainsKey(item.TaskOwnerId) ? users[item.TaskOwnerId] : "Bilinmiyor")</h6>
+                                <p class="card-text mt-2" style="display:none" Id="task_@item.TaskId">@item.TaskContent</p>
+                                <div class="btn-group mt-2">
+                                    <form id="postForm-@item.TaskId" method="post" action="@Url.Action("UpdateStatus", "Task")" style="display:none;">
+                                        <input type="hidden" name="id" value="@item.TaskId" />
+                                        @Html.AntiForgeryToken()
+                                    </form>
+                                    <button class="btn btn-outline-danger" onclick="göster(@item.TaskId)">Göster</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        }
+        else
+        {
+            <div class="col-md-9 mt-2">
+                <h1>Henüz görev girilmemiş.</h1>
+            </div>
+
+        }
+    </div>
+</div>
+
+
+
+
+<script>
+    function göster(id) {
+        var element = document.getElementById('task_' + id)
+        element.style.display = "block"
+    }
+</script>

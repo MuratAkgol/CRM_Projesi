@@ -67,3 +67,5 @@ C:\Users\murat\Desktop\CRM\CRM\bin\Debug\net6.0\EntityLayer.dll
 C:\Users\murat\Desktop\CRM\CRM\bin\Debug\net6.0\DataLayer.pdb
 C:\Users\murat\Desktop\CRM\CRM\bin\Debug\net6.0\EntityLayer.pdb
 C:\Users\murat\Desktop\CRM\CRM\obj\Debug\net6.0\CRM.csproj.CopyComplete
+C:\Users\murat\Desktop\CRM\CRM\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\murat\Desktop\CRM\CRM\bin\Debug\net6.0\BusinessLayer.pdb

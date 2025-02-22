@@ -122,6 +122,10 @@ namespace DataLayer.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("StockCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("StockId");
 
                     b.ToTable("tbl_stocks");
@@ -135,16 +139,23 @@ namespace DataLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SupplierId"), 1L, 1);
 
-                    b.Property<string>("ContactInfo")
+                    b.Property<string>("ContactCity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ContractInfo")
+                    b.Property<string>("ContactMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactPhone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastOperation")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -153,6 +164,41 @@ namespace DataLayer.Migrations
                     b.HasKey("SupplierId");
 
                     b.ToTable("tbl_suppliers");
+                });
+
+            modelBuilder.Entity("EntityLayer.Tasks", b =>
+                {
+                    b.Property<int>("TaskId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaskId"), 1L, 1);
+
+                    b.Property<string>("TaskContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("TaskCreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TaskCreatorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TaskOwnerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TaskStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaskTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TaskId");
+
+                    b.HasIndex("TaskCreatorId");
+
+                    b.ToTable("tbl_tasks");
                 });
 
             modelBuilder.Entity("EntityLayer.Users", b =>
@@ -213,6 +259,17 @@ namespace DataLayer.Migrations
                         .HasForeignKey("StocksStockId");
                 });
 
+            modelBuilder.Entity("EntityLayer.Tasks", b =>
+                {
+                    b.HasOne("EntityLayer.Users", "TaskCreator")
+                        .WithMany("OwnedTasks")
+                        .HasForeignKey("TaskCreatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TaskCreator");
+                });
+
             modelBuilder.Entity("EntityLayer.Users", b =>
                 {
                     b.HasOne("EntityLayer.Orders", null)
@@ -235,6 +292,11 @@ namespace DataLayer.Migrations
             modelBuilder.Entity("EntityLayer.Stocks", b =>
                 {
                     b.Navigation("ProductId");
+                });
+
+            modelBuilder.Entity("EntityLayer.Users", b =>
+                {
+                    b.Navigation("OwnedTasks");
                 });
 #pragma warning restore 612, 618
         }

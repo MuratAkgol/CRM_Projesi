@@ -12,6 +12,7 @@ namespace EntityLayer
         [Key]
         public int StockId { get; set; }
         public List<Products> ProductId { get; set; }
+        public string StockCode { get; set; }
         public int Quantity { get; set; }
         public string? Location { get; set; }
     }

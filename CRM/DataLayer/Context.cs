@@ -20,5 +20,6 @@ namespace DataLayer
         public DbSet<Suppliers> tbl_suppliers { get; set; }
         public DbSet<Orders> tbl_orders { get; set; }
         public DbSet<Users> tbl_users { get; set; }
+        public DbSet<Tasks> tbl_tasks { get; set; }
     }
 }

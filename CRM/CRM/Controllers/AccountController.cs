@@ -46,47 +46,29 @@ namespace CRM.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string username, string password, bool rememberMe)
         {
-            var users = _context.tbl_users.Count();
-            if (users > 0)
+
+            var user = await _context.tbl_users.FirstOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null || !PasswordHelper.VerifyPassword(password, user.Password) || !user.IsActive || !user.AdminApprove)
             {
-                var user = await _context.tbl_users.FirstOrDefaultAsync(u => u.UserName == username);
-
-                if (user == null || !PasswordHelper.VerifyPassword(password, user.Password) || !user.IsActive || !user.AdminApprove)
-                {
-                    ViewBag.Error = "Geçersiz kullanıcı adı veya şifre!";
-                    return View();
-                }
+                ViewBag.Error = "Geçersiz kullanıcı adı veya şifre!";
+                return View();
+            }
 
 
-                var claims = new List<Claim>
+            var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, user.UserName),
-            new Claim(ClaimTypes.Role, user.Role ?? "User")
+            new Claim(ClaimTypes.Role, user.Role ?? "User"),
+            new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
         };
 
-                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                var authProperties = new AuthenticationProperties { IsPersistent = rememberMe };
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var authProperties = new AuthenticationProperties { IsPersistent = rememberMe };
 
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
 
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                var user = new Users
-                {
-                    UserName = "admin",
-                    Password = PasswordHelper.HashPassword("admin123"),
-                    Email = "muratakgolll@hotmail.com",
-                    Role = "Admin",
-                    IsActive = true,
-                    AdminApprove = true
-                };
-                _context.tbl_users.Add(user);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
+            return RedirectToAction("Index", "Home");
 
         }
         [HttpPost]

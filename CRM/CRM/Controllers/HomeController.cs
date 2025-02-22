@@ -1,4 +1,6 @@
-﻿using CRM.Models;
+﻿using BusinessLayer.Abstract;
+using CRM.Helpers;
+using CRM.Models;
 using DataLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,18 +12,21 @@ namespace CRM.Controllers
     public class HomeController : Controller
     {
         private readonly Context _context;
+        private readonly ICurrentUserService _currentUserService;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, Context context)
+        public HomeController(ILogger<HomeController> logger, Context context, ICurrentUserService currentUserService)
         {
             _logger = logger;
             _context = context;
+            _currentUserService = currentUserService;
         }
 
         public IActionResult Index()
         {
             ViewBag.TotalSupp = _context.tbl_suppliers.Select(x=>x.SupplierId).Count();
-            var userName = User.Identity?.Name;
+            ViewBag.ComplatedTotalTasks = _context.tbl_tasks.Where(x => x.TaskStatus.Equals("Tamamlandı")).Count();
+            var userName = _currentUserService.UserName;
             ViewBag.UserName = userName;
             return View();
         }
