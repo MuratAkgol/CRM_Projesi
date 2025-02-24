@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using EntityLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +33,17 @@ namespace CRM.Controllers
             _context.SaveChanges();
             
             return RedirectToAction("UserPermision");
+        }
+        public IActionResult AddGroup()
+        {
+            var groups = _context.tbl_supplierGroups.ToList();
+            return View(groups);  
+        }
+        [HttpPost]
+        public IActionResult AddGroup(SupplierGroup group) {
+            _context.tbl_supplierGroups.Add(group);
+            _context.SaveChanges();
+            return RedirectToAction("AddGroup");
         }
     }
 }

@@ -2,6 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    var users = ViewBag.Users as Dictionary<int, string>;
 }
 @using EntityLayer
 @model List<Suppliers>
@@ -9,8 +10,10 @@
 
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4 mt-2">
-        <h2>Tedarikçiler</h2>
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addSupplierModal">+ Yeni Tedarikçi</button>
+        <h2>
+            Cariler
+        </h2>
+        <a class="btn btn-success" asp-controller="Supplier" asp-action="AddSupplier">+ Yeni Cari</a>
     </div>
     <div class="input-group mb-3  w-50">
         <input type="text" class="form-control" id="searchInput" placeholder="Filtrele">
@@ -22,12 +25,9 @@
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
-                <th>#</th>
                 <th>Tedarikçi Adı</th>
-                <th>İletişim E-posta</th>
-                <th>İletişim Telefon</th>
-                <th>Şehir</th>
-                <th>Son İşlem</th>
+                <th>Tedarik Niteliği</th>
+                <th>Plesiyer</th>
                 <th>Durum</th>
                 <th>İşlemler</th>
             </tr>
@@ -36,14 +36,11 @@
             @foreach (var supplier in Model)
             {
                 <tr>
-                    <td>@supplier.SupplierId</td>
-                    <td>@supplier.Name</td>
-                    <td>@supplier.ContactMail</td>
-                    <td>@supplier.ContactPhone</td>
-                    <td>@supplier.ContactCity</td>
-                    <td>@supplier.LastOperation.ToShortDateString()</td>
+                    <td>@supplier.CompanyName</td>
+                    <td>@supplier.SupplierGroup.GroupName</td>
+                    <td>@supplier.User.UserName</td>
                     <td>
-                        @if (supplier.IsActive)
+                        @if (supplier.Status)
                         {
                             <span class="status-active" style="color: green;font-weight: bold;">Aktif</span>
                         }
@@ -53,57 +50,13 @@
                         }
                     </td>
                     <td>
-                        <button class="btn btn-sm btn-primary">Düzenle</button>
-                        <button class="btn btn-sm btn-info">Detay</button>
-                        <button class="btn btn-sm btn-danger">Sil</button>
+                        <a asp-action="Details" asp-controller="Supplier" asp-route-id="@supplier.SupplierId" class="btn btn-sm btn-info">Detay</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
-<!-- Yeni Müşteri Ekle Modal -->
-<div class="modal fade" id="addSupplierModal" tabindex="-1" aria-labelledby="addSupplierModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form asp-action="AddSupplier" asp-controller="Supplier" method="post">
-                <div class="modal-header">
-                    <h5 class="modal-title">Yeni Tedarikçi Ekle</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label>Tedarikçi Adı</label>
-                        <input name="Name" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                        <label>İletişim E-posta</label>
-                        <input type="email" name="ContactMail" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                        <label>İletişim Telefon</label>
-                        <input name="ContactPhone" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                        <label>Şehir</label>
-                        <input name="ContactCity" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                        <label>Durum</label>
-                        <select name="IsActive" class="form-select" required>
-                            <option value="true">Aktif</option>
-                            <option value="false">Pasif</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Kaydet</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 <script>
     $(document).ready(function () {

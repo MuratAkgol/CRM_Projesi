@@ -17,6 +17,7 @@ namespace EntityLayer
         public string Role { get; set; }
         public bool IsActive { get; set; }
         public bool AdminApprove{ get; set; }
-        public List<Tasks> OwnedTasks { get; set; }
+        public ICollection<Tasks> OwnedTasks { get; set; }
+        public ICollection<Suppliers> Suppliers { get; set; }
     }
 }

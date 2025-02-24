@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using EntityLayer
+@model List<SupplierGroup>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Yeni Grup Ekle</h4>
+            <form method="post" asp-action="AddGroup" asp-controller="Settings">
+                <input type="text" name="GroupName" class="form-control" />
+                <button type="submit" class="btn btn-outline-dark mt-2">Ekle</button>
+            </form>
+        </div>
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Cari Grubu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.GroupId</td>
+                            <td>@item.GroupName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
