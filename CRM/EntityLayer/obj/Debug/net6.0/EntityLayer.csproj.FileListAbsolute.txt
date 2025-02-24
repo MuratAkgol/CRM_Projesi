@@ -10,3 +10,14 @@ C:\Users\murat\Desktop\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.dll
 C:\Users\murat\Desktop\CRM\EntityLayer\obj\Debug\net6.0\refint\EntityLayer.dll
 C:\Users\murat\Desktop\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
 C:\Users\murat\Desktop\CRM\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\bin\Debug\net6.0\EntityLayer.deps.json
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfo.cs
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.dll
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\refint\EntityLayer.dll
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
+C:\Users\Murat\OneDrive\Masaüstü\CRM_Projesi-main\CRM\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll

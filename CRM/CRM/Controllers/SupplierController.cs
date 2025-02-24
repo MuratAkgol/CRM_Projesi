@@ -1,4 +1,5 @@
-﻿using DataLayer;
+﻿using CRM.LogicControl;
+using DataLayer;
 using EntityLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace CRM.Controllers
         }
         public IActionResult Index()
         {
-            var suppliers = _context.tbl_suppliers.Include(x => x.User).Include(x=>x.SupplierGroup).ToList();
+            var suppliers = _context.tbl_suppliers.Include(x => x.User).Include(x => x.SupplierGroup).ToList();
             return View(suppliers);
         }
         public IActionResult AddSupplier()
@@ -30,10 +31,27 @@ namespace CRM.Controllers
         [HttpPost]
         public IActionResult AddSupplier(Suppliers supplier)
         {
-            _context.tbl_suppliers.Add(supplier);
-            _context.SaveChanges();
-            TempData["SuccessMessage"] = "Cari başarıyla eklendi!";
-            return RedirectToAction("Details", new { id = supplier.SupplierId });
+            bool vknControl = vknControll.IsVKNV(supplier.TaxNumber);
+
+            if (vknControl)
+            {
+                _context.tbl_suppliers.Add(supplier);
+                _context.SaveChanges();
+
+                return Json(new
+                {
+                    success = true,
+                    redirectUrl = Url.Action("Details", new { id = supplier.SupplierId })
+                });
+            }
+            else
+            {
+                return Json(new
+                {
+                    success = false,
+                    message = "Vergi numarası doğru değil!"
+                });
+            }
         }
 
 
@@ -52,6 +70,19 @@ namespace CRM.Controllers
             Value = u.UserId.ToString(),
             Text = u.UserName
         }).ToListAsync();
+
+            ViewBag.TypeOptions = new List<SelectListItem>
+{
+    new SelectListItem { Text = "Müşteri", Value = "Müşteri" },
+    new SelectListItem { Text = "Tedarikçi", Value = "Tedarikçi" },
+    new SelectListItem { Text = "Diğer", Value = "Diğer" }
+};
+
+            // Seçili olanı işaretle
+            foreach (var option in ViewBag.TypeOptions as List<SelectListItem>)
+            {
+                option.Selected = option.Value == context.Type;
+            }
 
             ViewBag.Users = users;
             ViewBag.SupplierGroups = new SelectList(_context.tbl_supplierGroups, "GroupId", "GroupName");

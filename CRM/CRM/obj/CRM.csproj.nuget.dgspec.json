@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj": {}
+    "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Murat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj"
               },
-              "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -67,24 +66,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj": {
+    "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj",
+        "projectUniqueName": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj",
         "projectName": "CRM",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj",
-        "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\CRM\\obj\\",
+        "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj",
+        "packagesPath": "C:\\Users\\Murat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\CRM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -93,19 +92,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -146,24 +143,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Murat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -172,15 +169,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -226,24 +222,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj",
-        "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\obj\\",
+        "projectPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\Murat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Murat\\OneDrive\\Masaüstü\\CRM_Projesi-main\\CRM\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -252,7 +248,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -286,7 +281,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

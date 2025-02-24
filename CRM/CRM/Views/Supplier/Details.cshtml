@@ -31,19 +31,21 @@
     }
 
     <!-- Başlık ve Düzenle Butonu -->
+    <form id="supplierForm" class="row g-4" method="post" asp-action="UpdateDetails" asp-controller="Supplier">
+
     <div class="d-flex justify-content-between align-items-center mb-3">
-        @if (Model.Type == "T")
+        @if (Model.Type == "Tedarikçi")
         {
             <h3><i class="fas fa-info-circle"></i> Tedarikçi Detayları</h3>
         }
-        else if (Model.Type == "M")
+        else
         {
             <h3><i class="fas fa-info-circle"></i> Müşteri Detayları</h3>
         }
-        <button id="editButton" class="btn btn-primary"><i class="fas fa-edit"></i> Düzenle</button>
+        <a id="editButton" class="btn btn-primary"><i class="fas fa-edit"></i> Düzenle</a>
+                <button id="updateSection" type="submit" class="btn btn-success" style="display:none"><i class="fas fa-save"></i> Güncelle</button>
     </div>
 
-    <form id="supplierForm" class="row g-4" method="post" asp-action="UpdateDetails" asp-controller="Supplier">
         @Html.AntiForgeryToken()
         <input type="hidden" name="SupplierId" value="@Model.SupplierId" />
         <!-- Sol Sütun -->
@@ -108,15 +110,10 @@
                     <select asp-for="UserId" asp-items="ViewBag.Users" class="form-select" disabled></select>
                 </div>
 
-                <div class="form-group mb-3">
-                    <label><i class="fas fa-list"></i> Cari Türü</label>
-                    <select name="Type" class="form-control">
-                        <option value="Müşteri">Müşteri</option>
-                        <option value="Tedarikçi">Tedarikçi</option>
-                        <option value="Diğer">Diğer</option>
-                    </select>
-                   @* <input type="text" name="Type" class="form-control" value="@Model.Type" required disabled>*@
-                </div>
+            <div class="form-group mb-3">
+                <label><i class="fas fa-list"></i> Cari Türü</label>
+                <select asp-for="Type" asp-items="ViewBag.TypeOptions" class="form-control" disabled></select>
+            </div>
 
                 <div class="form-group mb-3">
                     <label><i class="fas fa-layer-group"></i> Tedarikçi Grubu</label>
@@ -145,9 +142,6 @@
         </div>
 
         <!-- Güncelle Butonu -->
-        <div class="d-flex justify-content-end mt-4">
-            <button id="updateSection" type="submit" class="btn btn-success" style="display:none"><i class="fas fa-save"></i> Güncelle</button>
-        </div>
     </form>
 
     <style>
