@@ -15,9 +15,12 @@ namespace EntityLayer
         public string CompanyName { get; set; }
         public string? CompanyTitle { get; set; }
         public string Address { get; set; }
+        public string District { get; set; }
+        public string Province { get; set; }
         public string CountryCode { get; set; }
         public string TaxOffice { get; set; }
-        public string TaxNumber { get; set; }
+        public string? TaxNumber { get; set; }
+        public string? IdentityNumber { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public int UserId { get; set; } 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj": {}
+    "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj"
               },
-              "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -71,14 +71,14 @@
         }
       }
     },
-    "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj": {
+    "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj",
+        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj",
         "projectName": "CRM",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj",
+        "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj",
         "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\CRM\\obj\\",
+        "outputPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\CRM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -101,11 +101,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -150,14 +150,14 @@
         }
       }
     },
-    "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\DataLayer.csproj",
+        "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -179,8 +179,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -230,14 +230,14 @@
         }
       }
     },
-    "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\obj\\",
+        "outputPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -171,11 +171,22 @@ namespace DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("District")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IdentityNumber")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Province")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -190,7 +201,6 @@ namespace DataLayer.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TaxNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TaxOffice")

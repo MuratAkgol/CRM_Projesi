@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IimoAHvFajYEuETS8l9M1pGA2exYVdjJOAHYE4XOWb8Gxam6aTbUwFW1NGGHb856/AI81cUIDD68bp7k6Z97WQ==",
+  "dgSpecHash": "V+2OWU4tkYJE0/iS0BPhNyCUnuGBRlDc3CM50YK1TRVUYJqIZBJURhpG2V7T1YBaw3d13ToiQtTIb3l7aEyFUw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\murat\\Desktop\\CRM\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\murat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\murat\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj",
+      "projectUniqueName": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj",
       "projectName": "EntityLayer",
-      "projectPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\EntityLayer.csproj",
+      "projectPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\EntityLayer.csproj",
       "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\murat\\Desktop\\CRM\\EntityLayer\\obj\\",
+      "outputPath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\EntityLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"

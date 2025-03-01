@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qted+SoA+dExCpKyjxIFwEceJgRR0Cva3HWrsoNYzkD47pUMbiGX2JJtWfERKSfdSKn2cg6X2IV65NZdoZaxIw==",
+  "dgSpecHash": "4Y/TuZOFu26ReWNujIFrfRM45RH4eOIwjdr7HoKhJanu2Ig+G4E/yWRc5Z6/gTeKoXg3/M5P4SGta5ikmnvXYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\murat\\Desktop\\CRM\\CRM\\CRM.csproj",
+  "projectFilePath": "C:\\Users\\murat\\Desktop\\CRM_Projesi-main\\CRM\\CRM\\CRM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\murat\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\murat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
