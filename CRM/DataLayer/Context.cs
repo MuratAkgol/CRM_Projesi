@@ -22,5 +22,6 @@ namespace DataLayer
         public DbSet<Users> tbl_users { get; set; }
         public DbSet<Tasks> tbl_tasks { get; set; }
         public DbSet<SupplierGroup> tbl_supplierGroups { get; set; }
+        public DbSet<Checks> tbl_checks { get; set; }
     }
 }
